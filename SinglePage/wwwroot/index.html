@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>People</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="container py-5">
+        <h1 class="mb-4">People</h1>
+
+        <form id="person-form" class="mb-4">
+            <input type="hidden" id="person-id">
+            <div class="row g-2 align-items-end">
+                <div class="col-sm">
+                    <label for="first-name" class="form-label">First name</label>
+                    <input id="first-name" class="form-control" maxlength="100" required>
+                </div>
+                <div class="col-sm">
+                    <label for="last-name" class="form-label">Last name</label>
+                    <input id="last-name" class="form-control" maxlength="100" required>
+                </div>
+                <div class="col-auto">
+                    <button id="submit-button" class="btn btn-primary" type="submit">Add person</button>
+                    <button id="cancel-edit" class="btn btn-secondary" type="button" hidden>Cancel</button>
+                </div>
+            </div>
+            <p id="form-error" class="text-danger mt-2" role="alert" hidden></p>
+        </form>
+
+        <p id="notice" role="status" hidden></p>
+        <table class="table">
+            <thead>
+                <tr><th>Id</th><th>First name</th><th>Last name</th><th>Actions</th></tr>
+            </thead>
+            <tbody id="people-list"></tbody>
+        </table>
+        <p id="empty-state">No people found.</p>
+    </main>
+    <script src="/js/people.js"></script>
+</body>
+</html>
