@@ -28,5 +28,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.MapControllers();
-app.MapGet("/", () => Results.Redirect("/index.html"));
+app.MapGet("/", (IWebHostEnvironment environment) =>
+    Results.File(Path.Combine(environment.ContentRootPath, "Views", "index.html"), "text/html"));
 app.Run();
